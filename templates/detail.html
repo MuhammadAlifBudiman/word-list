@@ -148,6 +148,11 @@
       function add_ex() {
         let new_ex = $("#new-example").val();
 
+        if(!new_ex.includes(word)){
+          alert(`Mohon masukkan kata ${word} ke dalam kalimat`);
+          return;
+        }
+
         $.ajax({
           type: "POST",
           url: `/api/save_ex`,
